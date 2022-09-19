@@ -1,18 +1,12 @@
 version: "3.8"
 services:
-  jaime_starter_kit:
+  todo_app:
     build:
       context: .
       dockerfile: ./docker/dev.Dockerfile
     volumes:
       - ./:/app
-    container_name: jaime_starter_kit
+    container_name: todo_app
     ports:
+      - 8080:8080
       - 5051:5051
-    networks:
-      - jaime-network
-
-networks:
-  jaime-network:
-    external: true
-    name: jaime-global-network
