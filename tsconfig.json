@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "incremental": true,
+
+    "noLib": false,
+    "allowJs": true,
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@common/*": ["common/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@core/*": ["core/*"],
+      "@proto-interfaces/*": ["proto-interfaces/*"],
+      "@_submodules/*": ["_submodules/*"]
+    }
+  }
+}
+
+
+

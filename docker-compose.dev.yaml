@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  jaime_starter_kit:
+    build:
+      context: .
+      dockerfile: ./docker/dev.Dockerfile
+    volumes:
+      - ./:/app
+    container_name: jaime_starter_kit
+    ports:
+      - 5051:5051
+    networks:
+      - jaime-network
+
+networks:
+  jaime-network:
+    external: true
+    name: jaime-global-network
