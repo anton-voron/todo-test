@@ -4,6 +4,8 @@ import { GrpcCalculatorModule } from './modules/grpc-calculator/grpc-calculator.
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DbConnectionName } from '@common/constants/db-connection-name.enum';
 import { ConfigService } from '@modules/shared/services/config.service';
+import { UserModule } from './modules/user/user.module';
+import { TaskModule } from './modules/task/task.module';
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import { ConfigService } from '@modules/shared/services/config.service';
       inject: [ConfigService],
     }),
     GrpcCalculatorModule,
+    UserModule,
+    TaskModule,
   ],
 })
 export class AppModule {}

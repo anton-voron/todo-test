@@ -82,15 +82,16 @@ export class ConfigService {
   }
 
   get dbOption(): TypeOrmModuleOptions {
-    const entities = [path.join(__dirname, '/../../../common/entities/some-db-name/*.entity{.ts,.js}')];
-    const migrations = [path.join(__dirname, '/../../../migrations/some-db-name/*{.ts,.js}')];
+    const entities = [path.join(__dirname, '/../../../common/entities/sqlite-db/*.entity{.ts,.js}')];
+    const migrations = [path.join(__dirname, '/../../../migrations/sqlite-db/*{.ts,.js}')];
     return {
       entities,
       migrations,
       keepConnectionAlive: true,
       type: 'sqlite',
       database: this.get('DB_DATABASE'),
-      migrationsRun: true,
+      migrationsRun: false,
+      synchronize: true,
       logging: ['error'],
     };
   }
